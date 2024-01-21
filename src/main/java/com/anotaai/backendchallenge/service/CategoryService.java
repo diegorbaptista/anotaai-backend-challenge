@@ -54,6 +54,6 @@ public class CategoryService {
     }
 
     public List<Category> getAll() {
-        this.repository.findAll();
+        return this.repository.findAll();
     }
 }
