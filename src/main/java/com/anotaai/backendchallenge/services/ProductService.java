@@ -1,12 +1,12 @@
-package com.anotaai.backendchallenge.service;
+package com.anotaai.backendchallenge.services;
 
 import com.anotaai.backendchallenge.domain.Category;
 import com.anotaai.backendchallenge.domain.Product;
 import com.anotaai.backendchallenge.repositories.ProductRepository;
-import com.anotaai.backendchallenge.service.dto.CreateProductDTO;
-import com.anotaai.backendchallenge.service.dto.UpdateProductDTO;
-import com.anotaai.backendchallenge.service.exceptions.ProductAlreadyExistsException;
-import com.anotaai.backendchallenge.service.exceptions.ProductNotFoundException;
+import com.anotaai.backendchallenge.services.dto.CreateProductDTO;
+import com.anotaai.backendchallenge.services.dto.UpdateProductDTO;
+import com.anotaai.backendchallenge.services.exceptions.ProductAlreadyExistsException;
+import com.anotaai.backendchallenge.services.exceptions.ProductNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

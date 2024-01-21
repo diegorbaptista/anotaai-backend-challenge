@@ -1,4 +1,4 @@
-package com.anotaai.backendchallenge.service.exceptions;
+package com.anotaai.backendchallenge.services.exceptions;
 
 public class CategoryNotFoundException extends RuntimeException {
     public CategoryNotFoundException() {

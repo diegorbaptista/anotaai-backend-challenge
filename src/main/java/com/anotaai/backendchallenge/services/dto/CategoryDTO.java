@@ -1,4 +1,4 @@
-package com.anotaai.backendchallenge.service.dto;
+package com.anotaai.backendchallenge.services.dto;
 
 public record CategoryDTO(
         String id,
