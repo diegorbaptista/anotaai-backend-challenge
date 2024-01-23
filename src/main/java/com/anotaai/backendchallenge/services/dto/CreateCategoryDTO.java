@@ -14,6 +14,6 @@ public record CreateCategoryDTO(
         String ownerId
 ) {
     public Category toEntity() {
-        return new Category("", title, description, ownerId);
+        return new Category(null, title, description, ownerId);
     }
 }
