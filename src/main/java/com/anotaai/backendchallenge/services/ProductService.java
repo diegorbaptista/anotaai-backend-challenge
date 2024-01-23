@@ -7,7 +7,10 @@ import com.anotaai.backendchallenge.services.dto.CreateProductDTO;
 import com.anotaai.backendchallenge.services.dto.UpdateProductDTO;
 import com.anotaai.backendchallenge.services.exceptions.ProductAlreadyExistsException;
 import com.anotaai.backendchallenge.services.exceptions.ProductNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,7 +18,6 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository repository;
     private final CategoryService categoryService;
-
     public ProductService(ProductRepository repository, CategoryService categoryService) {
         this.repository = repository;
         this.categoryService = categoryService;
@@ -25,6 +27,7 @@ public class ProductService {
             throw new ProductAlreadyExistsException();
         }
     }
+    @Transactional
     public Product create(CreateProductDTO data) {
         checkIfProductAlreadyExists(data.title(), data.ownerId());
         var category = this.categoryService.getById(data.categoryId());
@@ -34,10 +37,9 @@ public class ProductService {
         this.repository.save(newProduct);
         return newProduct;
     }
-
-    public Product update(UpdateProductDTO data) {
-        var product = this.repository.findById(data.id()).orElseThrow(ProductNotFoundException::new);
-        checkIfProductAlreadyExists(data.title(), product.getOwnerId());
+    @Transactional
+    public Product update(String id, UpdateProductDTO data) {
+        var product = this.repository.findById(id).orElseThrow(ProductNotFoundException::new);
 
         Category category = null;
         if (data.categoryId() != null && !data.categoryId().isEmpty()) {
@@ -48,22 +50,15 @@ public class ProductService {
         this.repository.save(product);
         return product;
     }
-
+    @Transactional
     public void delete(String id) {
         var product = this.repository.findById(id).orElseThrow(ProductNotFoundException::new);
         this.repository.delete(product);
     }
-
     public Product getById(String id) {
         return this.repository.findById(id).orElseThrow(ProductNotFoundException::new);
     }
-
-    public List<Product> getAllByOwnerId(String ownerId) {
-        return this.repository.findAllByOwnerId(ownerId);
+    public Page<Product> getAll(Pageable pageable) {
+        return this.repository.findAll(pageable);
     }
-
-    public List<Product> getAll() {
-        return this.repository.findAll();
-    }
-
 }
