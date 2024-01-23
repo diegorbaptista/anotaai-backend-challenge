@@ -3,16 +3,14 @@ package com.anotaai.backendchallenge.services;
 import com.anotaai.backendchallenge.domain.Category;
 import com.anotaai.backendchallenge.domain.Product;
 import com.anotaai.backendchallenge.repositories.ProductRepository;
-import com.anotaai.backendchallenge.services.dto.CreateProductDTO;
-import com.anotaai.backendchallenge.services.dto.UpdateProductDTO;
+import com.anotaai.backendchallenge.services.dtos.products.CreateProductDTO;
+import com.anotaai.backendchallenge.services.dtos.products.UpdateProductDTO;
 import com.anotaai.backendchallenge.services.exceptions.ProductAlreadyExistsException;
 import com.anotaai.backendchallenge.services.exceptions.ProductNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class ProductService {

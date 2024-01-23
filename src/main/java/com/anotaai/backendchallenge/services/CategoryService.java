@@ -2,8 +2,8 @@ package com.anotaai.backendchallenge.services;
 
 import com.anotaai.backendchallenge.domain.Category;
 import com.anotaai.backendchallenge.repositories.CategoryRepository;
-import com.anotaai.backendchallenge.services.dto.CreateCategoryDTO;
-import com.anotaai.backendchallenge.services.dto.UpdateCategoryDTO;
+import com.anotaai.backendchallenge.services.dtos.categories.CreateCategoryDTO;
+import com.anotaai.backendchallenge.services.dtos.categories.UpdateCategoryDTO;
 import com.anotaai.backendchallenge.services.exceptions.CategoryAlreadyExistsException;
 import com.anotaai.backendchallenge.services.exceptions.CategoryNotFoundException;
 import org.springframework.data.domain.Page;

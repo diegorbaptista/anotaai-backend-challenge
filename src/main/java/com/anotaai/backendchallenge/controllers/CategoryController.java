@@ -1,9 +1,9 @@
 package com.anotaai.backendchallenge.controllers;
 
 import com.anotaai.backendchallenge.services.CategoryService;
-import com.anotaai.backendchallenge.services.dto.CategoryDTO;
-import com.anotaai.backendchallenge.services.dto.CreateCategoryDTO;
-import com.anotaai.backendchallenge.services.dto.UpdateCategoryDTO;
+import com.anotaai.backendchallenge.services.dtos.categories.CategoryDTO;
+import com.anotaai.backendchallenge.services.dtos.categories.CreateCategoryDTO;
+import com.anotaai.backendchallenge.services.dtos.categories.UpdateCategoryDTO;
 import com.anotaai.backendchallenge.services.mappers.CategoryMapper;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;

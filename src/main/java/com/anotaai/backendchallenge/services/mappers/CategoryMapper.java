@@ -1,7 +1,7 @@
 package com.anotaai.backendchallenge.services.mappers;
 
 import com.anotaai.backendchallenge.domain.Category;
-import com.anotaai.backendchallenge.services.dto.CategoryDTO;
+import com.anotaai.backendchallenge.services.dtos.categories.CategoryDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.function.Function;

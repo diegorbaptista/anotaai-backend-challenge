@@ -1,7 +1,7 @@
 package com.anotaai.backendchallenge.services.mappers;
 
 import com.anotaai.backendchallenge.domain.Product;
-import com.anotaai.backendchallenge.services.dto.ProductDTO;
+import com.anotaai.backendchallenge.services.dtos.products.ProductDTO;
 
 import java.util.function.Function;
 

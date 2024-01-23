@@ -1,4 +1,4 @@
-package com.anotaai.backendchallenge.services.dto;
+package com.anotaai.backendchallenge.services.dtos.products;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

@@ -1,12 +1,11 @@
 package com.anotaai.backendchallenge.controllers;
 
 import com.anotaai.backendchallenge.services.ProductService;
-import com.anotaai.backendchallenge.services.dto.CreateProductDTO;
-import com.anotaai.backendchallenge.services.dto.ProductDTO;
-import com.anotaai.backendchallenge.services.dto.UpdateProductDTO;
+import com.anotaai.backendchallenge.services.dtos.products.CreateProductDTO;
+import com.anotaai.backendchallenge.services.dtos.products.ProductDTO;
+import com.anotaai.backendchallenge.services.dtos.products.UpdateProductDTO;
 import com.anotaai.backendchallenge.services.mappers.ProductMapper;
 import jakarta.validation.Valid;
-import org.apache.coyote.Response;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
